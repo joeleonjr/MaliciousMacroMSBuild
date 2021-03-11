@@ -26,24 +26,26 @@ def gen_str():
 	return ''.join(random.choice(string.letters) for i in range(random.randint(8,12)))
 
 def minimize(output):
-    output = re.sub(r'\s*\<\!\-\- .* \-\-\>\s*\n', '', output)
-    output = output.replace('\n', '')
-    output = re.sub(r'\s{2,}', ' ', output)
-    output = re.sub(r'\s+([^\w])\s+', r'\1', output)
-    output = re.sub(r'([^\w"])\s+', r'\1', output)
+    #JL Temporarily removed minimize function since it was messing up custom template. 
+    # will review further.
+    #output = re.sub(r'\s*\<\!\-\- .* \-\-\>\s*\n', '', output)
+    #output = output.replace('\n', '')
+    #output = re.sub(r'\s{2,}', ' ', output)
+    #output = re.sub(r'\s+([^\w])\s+', r'\1', output)
+    #output = re.sub(r'([^\w"])\s+', r'\1', output)
 
-    variables = {
-        'payload' : 'x',
-        'method' : 'm',
-        'asm' : 'a',
-        'instance' : 'o',
-        'pipeline' : 'p',
-        'runspace' : 'r',
-        'decoded' : 'd'
-    }
+    #variables = {
+    #    'payload' : 'x',
+    #    'method' : 'm',
+    #    'asm' : 'a',
+    #    'instance' : 'o',
+    #    'pipeline' : 'p',
+    #    'runspace' : 'r',
+    #    'decoded' : 'd'
+    #}
 
-    for k, v in variables.items():
-        output = output.replace(k, v)
+    #for k, v in variables.items():
+    #    output = output.replace(k, v)
 
     return output
 
